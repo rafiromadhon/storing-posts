@@ -35,11 +35,19 @@ class PostController extends Controller
         $return['info'] = 'success';
         return response()->json($return);
     }
+
+    public function show($id){
+        if ($id != 'all') {
+            $get = DB::table('posts')->where('id', $id)->first();
+        } else{
+            $get = DB::table('posts')->get();
+        }
+        $return['info'] = 'success';
+        $return['data'] = $get;
+        return response()->json($return);
+    }
     
     public function delete_all_post(){
-        $execute = DB::table('posts')->delete();
-        $return['info'] = 'success';
-        return response()->json($return);
     }
 
     public function delete_post($id){

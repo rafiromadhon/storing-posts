@@ -23,5 +23,6 @@ Route::get('test', function () {
 });
 
 Route::get('store-data', [PostController::class, 'store']);
+Route::get('show/{id}', [PostController::class, 'show']);
 Route::get('delete-all-post', [PostController::class, 'delete_all_post']);
 Route::get('delete-post/{id}', [PostController::class, 'delete_post']);
