@@ -41,4 +41,14 @@ class PostController extends Controller
         $return['info'] = 'success';
         return response()->json($return);
     }
+
+    public function delete_post($id){
+        $execute = DB::table('posts')
+        ->where([
+            'id' => $id
+        ])
+        ->delete();
+        $return['info'] = 'success';
+        return response()->json($return);
+    }
 }
