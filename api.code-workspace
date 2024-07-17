@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"name": "SSH FS - lgk79_api",
+			"uri": "ssh://lgk79_api/home/tacc/api"
+		},
+		{
+			"name": "SSH FS - lgk79_my_dns",
+			"uri": "ssh://lgk79_my_dns/home/tacc/my_dns_79"
+		},
+		{
+			"name": "SSH FS - lgk79",
+			"uri": "ssh://lgk79/home/tacc/cc-agent"
+		},
+		{
+			"name": "SSH FS - acs36",
+			"uri": "ssh://acs36/usr/home/tuxedo/lilacs/application"
+		},
+		{
+			"name": "SSH FS - valins130",
+			"uri": "ssh://valins130/usr/home/valins/public_html/valins"
+		}
+	]
+}
