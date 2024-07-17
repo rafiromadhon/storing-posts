@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function store() {
+    public function store_post() {
         // return view('welcome');
 
         $api_url = 'jsonplaceholder.typicode.com/posts';
@@ -36,7 +36,7 @@ class PostController extends Controller
         return response()->json($return);
     }
 
-    public function show($id){
+    public function show_post($id){
         if ($id != 'all') {
             $get = DB::table('posts')->where('id', $id)->first();
         } else{
@@ -46,8 +46,27 @@ class PostController extends Controller
         $return['data'] = $get;
         return response()->json($return);
     }
+
+    public function update_post(Request $req){
+        $id = $req->id;
+        $title = $req->title;
+        $body = $req->body;
+
+        $execute = DB::table('posts')
+        ->where('id', $id)
+        ->update([
+            'title' => $title,
+            'body' => $body,
+        ]);
+
+        $return['info'] = 'success';
+        return response()->json($return);
+    }
     
     public function delete_all_post(){
+        $execute = DB::table('posts')->delete();
+        $return['info'] = 'success';
+        return response()->json($return);
     }
 
     public function delete_post($id){

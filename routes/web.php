@@ -22,7 +22,12 @@ Route::get('test', function () {
     return view('welcome');
 });
 
-Route::get('store-data', [PostController::class, 'store']);
-Route::get('show/{id}', [PostController::class, 'show']);
+Route::get('/token', function () {
+    return csrf_token(); 
+});
+
+Route::get('store-post', [PostController::class, 'store_post']);
+Route::get('show-post/{id}', [PostController::class, 'show_post']);
+Route::post('update-post', [PostController::class, 'update_post']);
 Route::get('delete-all-post', [PostController::class, 'delete_all_post']);
 Route::get('delete-post/{id}', [PostController::class, 'delete_post']);
